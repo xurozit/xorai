@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#C9A84C"/>
+  <meta name="description" content="Xorai — An Encyclopedia of Assam's Culture, Festivals, and Heritage"/>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+  <title>Xorai — Assam Cultural Encyclopedia</title>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <img src="icons/icon-192.png" alt="Xorai Logo" class="logo-icon"/>
+        <span class="logo-text">Xorai</span>
+      </div>
+      <p class="tagline">An Encyclopedia of Assam's Living Heritage</p>
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <button onclick="showSection('home')" class="nav-btn active">Home</button>
+    <button onclick="showSection('festivals')" class="nav-btn">Festivals</button>
+    <button onclick="showSection('tribes')" class="nav-btn">Tribes</button>
+    <button onclick="showSection('artcraft')" class="nav-btn">Art & Craft</button>
+    <button onclick="showSection('food')" class="nav-btn">Food</button>
+    <button onclick="showSection('musicdance')" class="nav-btn">Music & Dance</button>
+    <button onclick="showSection('about')" class="nav-btn">About</button>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- HOME -->
+    <section id="home" class="section active">
+      <div class="hero">
+        <h1>Welcome to Xorai</h1>
+        <p>Xorai is a sacred brass vessel used in Assamese rituals — a symbol of offering and reverence. This encyclopedia is our offering to the rich, living culture of Assam.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card" onclick="showSection('festivals')">
+          <h3>🎉 Festivals</h3>
+          <p>Bihu, Ambubachi, Dehing Patkai and more</p>
+        </div>
+        <div class="card" onclick="showSection('tribes')">
+          <h3>👥 Tribes & Communities</h3>
+          <p>Bodo, Mising, Karbi, Rabha and more</p>
+        </div>
+        <div class="card" onclick="showSection('artcraft')">
+          <h3>🎨 Art & Craft</h3>
+          <p>Muga silk, mask making and more</p>
+        </div>
+        <div class="card" onclick="showSection('food')">
+          <h3>🍛 Food & Cuisine</h3>
+          <p>Assamese Thali and traditional dishes</p>
+        </div>
+        <div class="card" onclick="showSection('musicdance')">
+          <h3>🎶 Music & Dance</h3>
+          <p>Bihu dance, Sattriya, Borgeet and more</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FESTIVALS -->
+    <section id="festivals" class="section">
+      <h2>Festivals of Assam</h2>
+      <div class="entry-list" id="festivals-list">
+        <!-- Entries loaded by app.js -->
+      </div>
+    </section>
+
+    <!-- TRIBES -->
+    <section id="tribes" class="section">
+      <h2>Tribes & Communities</h2>
+      <div class="entry-list" id="tribes-list"></div>
+    </section>
+
+    <!-- ART & CRAFT -->
+    <section id="artcraft" class="section">
+      <h2>Art & Craft</h2>
+      <div class="entry-list" id="artcraft-list"></div>
+    </section>
+
+    <!-- FOOD -->
+    <section id="food" class="section">
+      <h2>Food & Cuisine</h2>
+      <div class="entry-list" id="food-list"></div>
+    </section>
+
+    <!-- MUSIC & DANCE -->
+    <section id="musicdance" class="section">
+      <h2>Music & Dance</h2>
+      <div class="entry-list" id="musicdance-list"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2>About Xorai</h2>
+      <p>Xorai is an independent, non-commercial encyclopedia dedicated to preserving and sharing the cultural heritage of Assam, Northeast India.</p>
+      <p>Built with respect for every community represented here. If you find any inaccuracy, please reach out.</p>
+      <p>Created by <strong>Xurozit</strong> — Assam, India.</p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Xorai · Made with respect for Assam's heritage</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+
+</body>
+</html>
